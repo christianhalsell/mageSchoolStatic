@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Mage School</title>
+
+<link type="text/css" rel="stylesheet" href="css/main.css" media="all">
+<link href='http://fonts.googleapis.com/css?family=Eagle+Lake' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+<div id="container">
+<div id='arena'>
+    <div id='player1Wrap'>
+    	<div id='player1Name'>Player 1</div>
+    	<div id='player1HPBarWrap'>
+            <div id='player1HPBar'></div>
+        </div><!-- /player1HPBarWrap -->
+    </div><!-- /player1Wrap -->
+    
+<div id='player2Wrap'>
+<div id='player2Name'>Apprentice</div>
+<div id='player2HPBarWrap'>
+<div id='player2HPBar'>
+</div>
+</div>
+</div>
+
+<div id='spellBar'>
+<button id='spellBarLevel1' class='<%= spellLevel1 %>'></button>
+<button id='spellBarLevel2' class='<%= spellLevel2 %>'></button>
+<button id='spellBarLevel3' class='<%= spellLevel3 %>'></button>
+</div>
+<div id='battleDisplay'>
+</div>
+</div>
+
+</div><!-- /container -->
+</body>
+<script src='spellbook.js'></script>
+<script src='battle.js'></script>
+
+</html>

@@ -1,0 +1,318 @@
+/* CSS Document */
+
+html, body, form, img {margin:0; padding:0; border:0}
+html {font-size:100%}
+body {
+	font:.75em/1.4 verdana,arial,sans-serif;
+	background:#aaa;
+	color:#000;
+}
+
+/* ---- universal properties ---- */
+p, ul, li, h1, h2, h3 {margin:0 0 1em; padding:0}
+
+abbr, acronym {cursor:help}
+
+.clearfix:after {
+  visibility:hidden;
+  display:block;
+  font-size:0;
+  content:" ";
+  clear:both;
+  height:0;
+}
+
+.clearfix {display:inline-block}
+
+/* start commented backslash hack \*/
+* html .clearfix {height:1%}
+.clearfix {display:block}
+/* close commented backslash hack */
+
+/* ---- lists ---- */
+ul {margin-left:35px}
+li {margin-bottom:5px}
+ul li ul {margin-top:10px}
+
+/* ---- headings ---- */
+h1 {font-size:1.5em}
+h2 {font-size:1.3em}
+h3 {font-size:1.2em}
+
+/* ---- container ---- */
+#container {
+	margin:0 auto;
+	width:960px;
+}
+
+/* ---- SPELLBOOK ---- */
+#spellbook {
+	position:relative;
+	margin-top:20px;
+	width:920px;
+	height:550px;
+	padding:20px;
+	background:white;
+}
+
+#logIn {margin-bottom:20px}
+
+label {font-family: 'Eagle Lake', cursive; font-size:24px;}
+
+.labelWrap {margin-right:20px; margin-left:50px; float:left;}
+
+#spellColWrap {padding:0 50px; background-color:orange;}
+
+.spellCol {
+	margin-right:20px;
+	padding:20px 25px 10px;
+	float:left;
+}
+
+.fireBG {background:url(/images/colFireBG.jpg) no-repeat 0 0}
+.woodBG {background:url(/images/colWoodBG.jpg) no-repeat 0 0}
+.waterBG {background:url(/images/colWaterBG.jpg) no-repeat 0 0}
+.metalBG {background:url(/images/colMetalBG.jpg) no-repeat 0 0}
+.earthBG {background:url(/images/colEarthBG.jpg) no-repeat 0 0}
+
+.spellCol h2 {
+	text-align: center;
+	font-size:24px;
+	margin:0 0 7px;
+	font-family: 'Eagle Lake', cursive;
+	color:#fff;
+}
+
+.spellCol h3 {
+	text-align:center;
+	color:#fff;
+}
+
+.spellCol:last-child {margin-right:0}
+
+.spellCol button {
+	display:block;
+	width:96px;
+	height:64px;
+	border:0;
+	cursor:pointer;
+	outline:0 none;
+}
+
+/* Fire */
+.spellCol button#fire1,
+.level1FireSelected,
+button.fire1 {background:url(/images/iconFire1.jpg) no-repeat 0 0}
+
+.spellCol button#fire2,
+.level2FireSelected,
+button.fire2 {background:url(/images/iconFire2.jpg) no-repeat 0 0}
+
+.spellCol button#fire3,
+.level3FireSelected,
+button.fire3 {background:url(/images/iconFire3.jpg) no-repeat 0 0}
+
+/*.spellCol button#spellbookFire1.selected,*/
+.spellCol button#fire1.selected,
+button.fire1.selected,
+.spellCol button#fire2.selected,
+.spellCol button#fire3.selected {background-position:0 -64px}
+
+/* Wood */
+.spellCol button#wood1,
+.level1WoodSelected,
+button.wood1  {background:url(/images/iconWood1.jpg) no-repeat 0 0}
+
+.spellCol button#wood2,
+.level2WoodSelected,
+button.wood2  {background:url(/images/iconWood2.jpg) no-repeat 0 0}
+
+.spellCol button#wood3,
+.level3WoodSelected,
+button.wood3  {background:url(/images/iconWood3.jpg) no-repeat 0 0}
+
+.spellCol button#wood1.selected,
+.spellCol button#wood2.selected,
+.spellCol button#wood3.selected {background-position:0 -64px}
+
+/* Water */
+.spellCol button#water1,
+.level1WaterSelected,
+button.water1  {background:url(/images/iconWater1.jpg) no-repeat 0 0}
+
+.spellCol button#water2,
+.level2WaterSelected,
+button.water2  {background:url(/images/iconWater2.jpg) no-repeat 0 0}
+
+.spellCol button#water3,
+.level3WaterSelected,
+button.water3  {background:url(/images/iconWater3.jpg) no-repeat 0 0}
+
+.spellCol button#water1.selected,
+.spellCol button#water2.selected,
+.spellCol button#water3.selected {background-position:0 -64px}
+
+/* Metal */
+.spellCol button#metal1,
+.level1MetalSelected,
+button.metal1 {background:url(/images/iconMetal1.jpg) no-repeat 0 0}
+
+.spellCol button#metal2,
+.level2MetalSelected,
+button.metal2 {background:url(/images/iconMetal2.jpg) no-repeat 0 0}
+
+.spellCol button#metal3,
+.level3MetalSelected,
+button.metal3 {background:url(/images/iconMetal3.jpg) no-repeat 0 0}
+
+.spellCol button#metal1.selected,
+.spellCol button#metal2.selected,
+.spellCol button#metal3.selected {background-position:0 -64px}
+
+/* Earth */
+.spellCol button#earth1,
+.level1EarthSelected,
+button.earth1 {background:url(/images/iconEarth1.jpg) no-repeat 0 0}
+
+.spellCol button#earth2,
+.level2EarthSelected,
+button.earth2 {background:url(/images/iconEarth2.jpg) no-repeat 0 0}
+
+.spellCol button#earth3,
+.level3EarthSelected,
+button.earth3 {background:url(/images/iconEarth3.jpg) no-repeat 0 0}
+
+/*.spellCol button#spellbookEarth1.selected,*/
+.spellCol button#earth1.selected,
+.spellCol button#earth2.selected,
+.spellCol button#earth3.selected {background-position:0 -64px}
+
+#selectedSpellsWrap {
+	padding:20px 0 20px 20px;
+	position:absolute;
+	bottom:20px;
+	margin-left:267px;
+	background:yellow;
+}
+
+span#spellSelected1,
+span#spellSelected2,
+span#spellSelected3 {
+	display:inline-block;
+	width:96px;
+	height:64px;
+	margin-right:20px;
+}
+
+span#spellSelected1.inactive,
+span#spellSelected2.inactive,
+span#spellSelected3.inactive {background:black none;}
+
+button#commitSpells {
+	font-size:16px;
+	font-weight:bold;
+	cursor:pointer;
+	padding:4px 30px;
+	color:#fff;
+	background:purple;
+	border:0;
+	outline:0 none;
+	position:absolute;
+	bottom:40px;
+	right:20px;
+	border-radius:6px;
+}
+
+/* ---- ARENA ---- */
+#arena {
+	position:relative;
+	margin-top:20px;
+	width:920px;
+	height:500px;
+	padding:20px;
+	background:white;
+}
+
+#player1Wrap {
+	position:absolute;
+	left:20px;
+	top:20px;
+	font-size:10px;
+	padding:20px;
+	background:#222;
+}
+
+#player2Wrap {
+	position:absolute;
+	right:20px;
+	top:20px;
+	font-size:10px;
+	padding:20px;
+	background:#222;
+}
+
+#player1Name {
+	font-size:12px;
+	margin:0 0 5px;
+	text-align:left;
+	color:#fff;
+}
+
+#player2Name {
+	font-size:12px;
+	margin:0 0 5px;
+	text-align:right;
+	color:#fff;
+}
+
+#player1HPBarWrap,
+#player2HPBarWrap {
+	width:200px;
+	height:20px;
+	border:1px solid blue;
+	background:black;
+}
+
+#player1HPBar {
+	height:20px;
+	float:left;
+	background:blue;
+}
+
+#player2HPBar {
+	height:20px;
+	float:right;
+	background:blue;
+}
+
+#battleDisplay {
+	width:918px;
+	height:258px;
+	position:absolute;
+	font-size:24px;
+	left:20px;
+	top:120px;
+	border:1px solid purple;
+	background:lavender;
+}
+
+#spellBar {
+	padding:20px 0 20px 20px;
+	position:absolute;
+	bottom:20px;
+	margin-left:267px;
+	background:orange;	
+}
+
+button#spellBarLevel1,
+button#spellBarLevel2,
+button#spellBarLevel3 {
+	display:inline-block;
+	width:96px;
+	height:64px;
+	border:0;
+	outline:0 none;
+	cursor:pointer;
+	margin-right:20px;
+	background-color:#fff;
+}
