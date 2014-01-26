@@ -69,11 +69,11 @@ label {font-family: 'Eagle Lake', cursive; font-size:24px;}
 	float:left;
 }
 
-.fireBG {background:url(/images/colFireBG.jpg) no-repeat 0 0}
-.woodBG {background:url(/images/colWoodBG.jpg) no-repeat 0 0}
-.waterBG {background:url(/images/colWaterBG.jpg) no-repeat 0 0}
-.metalBG {background:url(/images/colMetalBG.jpg) no-repeat 0 0}
-.earthBG {background:url(/images/colEarthBG.jpg) no-repeat 0 0}
+.fireBG {background:url(../images/colFireBG.jpg) no-repeat 0 0}
+.woodBG {background:url(../images/colWoodBG.jpg) no-repeat 0 0}
+.waterBG {background:url(../images/colWaterBG.jpg) no-repeat 0 0}
+.metalBG {background:url(../images/colMetalBG.jpg) no-repeat 0 0}
+.earthBG {background:url(../images/colEarthBG.jpg) no-repeat 0 0}
 
 .spellCol h2 {
 	text-align: center;
@@ -102,15 +102,15 @@ label {font-family: 'Eagle Lake', cursive; font-size:24px;}
 /* Fire */
 .spellCol button#fire1,
 .level1FireSelected,
-button.fire1 {background:url(/images/iconFire1.jpg) no-repeat 0 0}
+button.fire1 {background:url(../images/iconFire1.jpg) no-repeat 0 0}
 
 .spellCol button#fire2,
 .level2FireSelected,
-button.fire2 {background:url(/images/iconFire2.jpg) no-repeat 0 0}
+button.fire2 {background:url(../images/iconFire2.jpg) no-repeat 0 0}
 
 .spellCol button#fire3,
 .level3FireSelected,
-button.fire3 {background:url(/images/iconFire3.jpg) no-repeat 0 0}
+button.fire3 {background:url(../images/iconFire3.jpg) no-repeat 0 0}
 
 /*.spellCol button#spellbookFire1.selected,*/
 .spellCol button#fire1.selected,
@@ -121,15 +121,15 @@ button.fire1.selected,
 /* Wood */
 .spellCol button#wood1,
 .level1WoodSelected,
-button.wood1  {background:url(/images/iconWood1.jpg) no-repeat 0 0}
+button.wood1  {background:url(../images/iconWood1.jpg) no-repeat 0 0}
 
 .spellCol button#wood2,
 .level2WoodSelected,
-button.wood2  {background:url(/images/iconWood2.jpg) no-repeat 0 0}
+button.wood2  {background:url(../images/iconWood2.jpg) no-repeat 0 0}
 
 .spellCol button#wood3,
 .level3WoodSelected,
-button.wood3  {background:url(/images/iconWood3.jpg) no-repeat 0 0}
+button.wood3  {background:url(../images/iconWood3.jpg) no-repeat 0 0}
 
 .spellCol button#wood1.selected,
 .spellCol button#wood2.selected,
@@ -138,15 +138,15 @@ button.wood3  {background:url(/images/iconWood3.jpg) no-repeat 0 0}
 /* Water */
 .spellCol button#water1,
 .level1WaterSelected,
-button.water1  {background:url(/images/iconWater1.jpg) no-repeat 0 0}
+button.water1  {background:url(../images/iconWater1.jpg) no-repeat 0 0}
 
 .spellCol button#water2,
 .level2WaterSelected,
-button.water2  {background:url(/images/iconWater2.jpg) no-repeat 0 0}
+button.water2  {background:url(../images/iconWater2.jpg) no-repeat 0 0}
 
 .spellCol button#water3,
 .level3WaterSelected,
-button.water3  {background:url(/images/iconWater3.jpg) no-repeat 0 0}
+button.water3  {background:url(../images/iconWater3.jpg) no-repeat 0 0}
 
 .spellCol button#water1.selected,
 .spellCol button#water2.selected,
@@ -155,15 +155,15 @@ button.water3  {background:url(/images/iconWater3.jpg) no-repeat 0 0}
 /* Metal */
 .spellCol button#metal1,
 .level1MetalSelected,
-button.metal1 {background:url(/images/iconMetal1.jpg) no-repeat 0 0}
+button.metal1 {background:url(../images/iconMetal1.jpg) no-repeat 0 0}
 
 .spellCol button#metal2,
 .level2MetalSelected,
-button.metal2 {background:url(/images/iconMetal2.jpg) no-repeat 0 0}
+button.metal2 {background:url(../images/iconMetal2.jpg) no-repeat 0 0}
 
 .spellCol button#metal3,
 .level3MetalSelected,
-button.metal3 {background:url(/images/iconMetal3.jpg) no-repeat 0 0}
+button.metal3 {background:url(../images/iconMetal3.jpg) no-repeat 0 0}
 
 .spellCol button#metal1.selected,
 .spellCol button#metal2.selected,
@@ -172,15 +172,15 @@ button.metal3 {background:url(/images/iconMetal3.jpg) no-repeat 0 0}
 /* Earth */
 .spellCol button#earth1,
 .level1EarthSelected,
-button.earth1 {background:url(/images/iconEarth1.jpg) no-repeat 0 0}
+button.earth1 {background:url(../images/iconEarth1.jpg) no-repeat 0 0}
 
 .spellCol button#earth2,
 .level2EarthSelected,
-button.earth2 {background:url(/images/iconEarth2.jpg) no-repeat 0 0}
+button.earth2 {background:url(../images/iconEarth2.jpg) no-repeat 0 0}
 
 .spellCol button#earth3,
 .level3EarthSelected,
-button.earth3 {background:url(/images/iconEarth3.jpg) no-repeat 0 0}
+button.earth3 {background:url(../images/iconEarth3.jpg) no-repeat 0 0}
 
 /*.spellCol button#spellbookEarth1.selected,*/
 .spellCol button#earth1.selected,

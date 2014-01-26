@@ -13,7 +13,6 @@ function Player(hp, baseHp, spell1, spell1Damage, spell2, spell2Damage, spell3, 
 	this.spell3Damage = spell3Damage;
 }
 
-
 var level1List = ['fire1','wood1','water1','metal1','earth1'];
 var level2List = ['fire2','wood2','water2','metal2','earth2'];
 var level3List = ['fire3','wood3','water3','metal3','earth3'];
