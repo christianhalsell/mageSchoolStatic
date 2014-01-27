@@ -132,13 +132,15 @@ if (enemy.spell3 === "earth3" && hero.spell3 === "metal3") {enemy.spell3Damage =
 
 $("#battleDisplay").html("BEGIN!");
 
-console.log("Player\'s first spell is " + hero.spell1 + ".");
-console.log("Player\'s second spell is " + hero.spell2 + ".");
-console.log("Player\'s third spell is " + hero.spell3 + ".");
-console.log("");
-console.log("Enemy\'s first spell is " + enemy.spell1 + ".");
-console.log("Enemy\'s second spell is " + enemy.spell2 + ".");
-console.log("Enemy\'s third spell is " + enemy.spell3 + ".");
+$('#commitSpells').on('click', function() {
+	console.log("Player\'s first spell is " + hero.spell1 + ".");
+	console.log("Player\'s second spell is " + hero.spell2 + ".");
+	console.log("Player\'s third spell is " + hero.spell3 + ".");
+	console.log("");
+	console.log("Enemy\'s first spell is " + enemy.spell1 + ".");
+	console.log("Enemy\'s second spell is " + enemy.spell2 + ".");
+	console.log("Enemy\'s third spell is " + enemy.spell3 + ".");
+});
 
 // Let's rumble
 var battle = function() {

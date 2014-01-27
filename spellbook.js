@@ -12,18 +12,22 @@ function spellbookSelect() {
 		if (tempTypeLevel === 'fire1') {
 			$('button.bookLevel1').removeClass('selected');
 			$('span#spellSelected1').removeClass().addClass('level1FireSelected');
+			$('#spellBarLevel1').removeClass().addClass('level1FireSelected');
 			spellLevel1Select = tempTypeLevel;
+			console.log(spellLevel1Select);
 		}
 
 		if (tempTypeLevel === 'fire2') {
 			$('button.bookLevel2').removeClass('selected');
 			$('span#spellSelected2').removeClass().addClass('level2FireSelected');
+			$('#spellBarLevel2').removeClass().addClass('level2FireSelected');
 			spellLevel2Select = tempTypeLevel;
 		}
 
 		if (tempTypeLevel === 'fire3') {
 			$('button.bookLevel3').removeClass('selected');
 			$('span#spellSelected3').removeClass().addClass('level3FireSelected');
+			$('#spellBarLevel3').removeClass().addClass('level3FireSelected');
 			spellLevel3Select = tempTypeLevel;
 		}
 
