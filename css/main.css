@@ -29,6 +29,9 @@ abbr, acronym {cursor:help}
 .clearfix {display:block}
 /* close commented backslash hack */
 
+.hide {display:none}
+.show {display:block}
+
 /* ---- lists ---- */
 ul {margin-left:35px}
 li {margin-bottom:5px}
@@ -39,19 +42,14 @@ h1 {font-size:1.5em}
 h2 {font-size:1.3em}
 h3 {font-size:1.2em}
 
-/* ---- container ---- */
-#container {
-	margin:0 auto;
-	width:960px;
-}
-
 /* ---- SPELLBOOK ---- */
-#spallbookWrap {
+#spellbookWrap {
 	width:100%;
 	height:100%;
 	position:absolute;
 	top:0;
 	left:0;
+	z-index:1000;
 	background-color:blue;
 }
 
@@ -233,12 +231,22 @@ button#commitSpells {
 }
 
 /* ---- ARENA ---- */
+#arenaWrap {
+	width:100%;
+	height:100%;
+	position:absolute;
+	padding:20px 0;
+	left:0;
+	top:0;
+	z-index:100;
+	background-color:green;
+}
+
 #arena {
 	position:relative;
-	margin-top:20px;
-	width:920px;
+	margin:0 auto;
+	width:960px;
 	height:500px;
-	padding:20px;
 	background:white;
 }
 

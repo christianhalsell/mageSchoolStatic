@@ -1,4 +1,5 @@
 /* SPELLBOOK */
+var playerName;
 var spellLevel1Select = "";
 var spellLevel2Select = "";
 var spellLevel3Select = "";
@@ -116,3 +117,11 @@ function spellbookSelect() {
 }
 
 spellbookSelect();
+
+// Commit spells and hide spellbook
+$('#commitSpells').on('click', function() {
+	$('#spellbookWrap').addClass('hide');
+	playerName = $('#inputName').val();
+	$('#player1Name').html(playerName);
+});
+
