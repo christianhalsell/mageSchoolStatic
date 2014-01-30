@@ -4,7 +4,6 @@ var spellLevel1Select = "";
 var spellLevel2Select = "";
 var spellLevel3Select = "";
 
-
 function spellbookSelect() {
 	$('.spellCol button').click(function() {
 		var tempTypeLevel = $(this).attr('id');
@@ -15,7 +14,6 @@ function spellbookSelect() {
 			$('span#spellSelected1').removeClass().addClass('level1FireSelected');
 			$('#spellBarLevel1').removeClass().addClass('level1FireSelected');
 			spellLevel1Select = tempTypeLevel;
-			console.log(spellLevel1Select);
 		}
 
 		if (tempTypeLevel === 'fire2') {
@@ -108,7 +106,8 @@ function spellbookSelect() {
 			spellLevel3Select = tempTypeLevel;
 		}
 
-		$(this).addClass("selected");
+		$(this).addClass("selected"); // Adds greenbox around spellbook items
+		
 		console.log("Spell Level 1: " + spellLevel1Select);
 		console.log("Spell Level 2: " + spellLevel2Select);
 		console.log("Spell Level 3: " + spellLevel3Select);
@@ -120,8 +119,22 @@ spellbookSelect();
 
 // Commit spells and hide spellbook
 $('#commitSpells').on('click', function() {
+	// Hide spellbook view
 	$('#spellbookWrap').addClass('hide');
+	
 	playerName = $('#inputName').val();
-	$('#player1Name').html(playerName);
+	if (playerName) {
+		$('#player1Name').html(playerName);
+	} else {
+		$('#player1Name').html("Player 1");	
+	};
+	
+	console.log("Player\'s first spell is " + spellLevel1Select + ".");
+	console.log("Player\'s second spell is " + spellLevel2Select + ".");
+	console.log("Player\'s third spell is " + spellLevel3Select + ".");
+	
+	$("#battleDisplay").append("Player\'s first spell is " + spellLevel1Select + ".<br>");
+	$("#battleDisplay").append("Player\'s first spell is " + spellLevel2Select + ".<br>");
+	$("#battleDisplay").append("Player\'s first spell is " + spellLevel3Select + ".");
 });
 
