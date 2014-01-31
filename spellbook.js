@@ -258,10 +258,34 @@ $("#battleDisplay").html("BEGIN!");
 
 // Let's rumble
 var battle = function() {
-
+	// Set up hp bars
 	$('#player1HPBar').css('width', "100%");
 	$('#player2HPBar').css('width', "100%");
-
+	
+	// Change hp bar color depending on percentage
+	var hpBarAlert = function() {
+		// If HP drops to 50% or below
+		if (hero.hp <= (hero.baseHp / 2)) {
+			$('#player1HPBar').css('background','orange');
+			$('#player1HPBarWrap').css('border','1px solid orange');
+		}
+		if (enemy.hp <= (enemy.baseHp / 2)) {
+			$('#player2HPBar').css('background','orange');
+			$('#player2HPBarWrap').css('border','1px solid orange');
+		}
+		
+		// If HP drops to 20% or below
+		if (hero.hp <= (hero.baseHp / 5)) {
+			$('#player1HPBar').css('background','red');
+			$('#player1HPBarWrap').css('border','1px solid red');
+		}
+		if (enemy.hp <= (enemy.baseHp / 5)) {
+			$('#player2HPBar').css('background','red');
+			$('#player2HPBarWrap').css('border','1px solid red');
+		}
+	}
+	
+	// See if player wins or loses
 	var playerWin = function() {
 		if (enemy.hp <= 0) {
 			alert("You WIN!!!");
@@ -281,6 +305,7 @@ var battle = function() {
 		$('#player2HPBar').css('width', percentWidth);
 		$('#spellBarLevel1').addClass('selected');
 		$('#battleDisplay').html("You attack with " + hero.spell1 + " for " + hero.spell1Damage + " damage.<br>");
+		hpBarAlert();
 		playerWin();
 
 		if (enemy.hp > 0) {
@@ -290,6 +315,7 @@ var battle = function() {
 				$('#player1HPBar').css('width', percentWidth);
 				$('#spellBarLevel1').removeClass('selected');
 				$('#battleDisplay').append("Enemy attacks with " + enemy.spell1 + " for " + enemy.spell1Damage + " damage.<br>");
+				hpBarAlert();
 				enemyWin();
 			}, 1000);
 		}
@@ -303,6 +329,7 @@ var battle = function() {
 		$('#player2HPBar').css('width', percentWidth);
 		$('#spellBarLevel2').addClass('selected');
 		$('#battleDisplay').html("You attack with " + hero.spell2 + " for " + hero.spell2Damage + " damage.<br>");
+		hpBarAlert();
 		playerWin();
 
 		if (enemy.hp > 0) {
@@ -312,6 +339,7 @@ var battle = function() {
 				$('#player1HPBar').css('width', percentWidth);
 				$('#spellBarLevel2').removeClass('selected');
 				$('#battleDisplay').append("Enemy attacks with " + enemy.spell2 + " for " + enemy.spell2Damage + " damage.<br>");
+				hpBarAlert();
 				enemyWin();
 			}, 1000);
 		}
@@ -325,6 +353,7 @@ var battle = function() {
 		$('#player2HPBar').css('width', percentWidth);
 		$('#spellBarLevel3').addClass('selected');
 		$('#battleDisplay').html("You attack with " + hero.spell3 + " for " + hero.spell3Damage + " damage.<br>");
+		hpBarAlert();
 		playerWin();
 
 		if (enemy.hp > 0) {
@@ -334,6 +363,7 @@ var battle = function() {
 				$('#player1HPBar').css('width', percentWidth);
 				$('#spellBarLevel3').removeClass('selected');
 				$('#battleDisplay').append("Enemy attacks with " + enemy.spell3 + " for " + enemy.spell3Damage + " damage.<br>");
+				hpBarAlert();
 				enemyWin();
 			}, 1000);
 		}
