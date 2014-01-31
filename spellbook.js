@@ -147,36 +147,32 @@ var level1List = ['fire1','wood1','water1','metal1','earth1'];
 var level2List = ['fire2','wood2','water2','metal2','earth2'];
 var level3List = ['fire3','wood3','water3','metal3','earth3'];
 
-/*var level1ListRandom = Math.floor(Math.random()* 5);
+var level1ListRandom = Math.floor(Math.random()* 5);
 var level2ListRandom = Math.floor(Math.random()* 5);
-var level3ListRandom = Math.floor(Math.random()* 5);*/
-
-var level1ListRandom = 1;
-var level2ListRandom = 1;
-var level3ListRandom = 1;
+var level3ListRandom = Math.floor(Math.random()* 5);
 
 var enemySpell1 = level1List[level1ListRandom];
 var enemySpell2 = level2List[level2ListRandom];
 var enemySpell3 = level3List[level3ListRandom];
 
-var spellLevel1Damage = 10;
+/*var spellLevel1Damage = 10;
 var spellLevel1DamageEnemy = 10;
 
 var spellLevel2Damage = 20;
 var spellLevel2DamageEnemy = 20;
 
 var spellLevel3Damage = 30;
-var spellLevel3DamageEnemy = 30;
+var spellLevel3DamageEnemy = 30;*/
 
 // Spell Damage
-//var spellLevel1Damage = Math.floor(Math.random() * 6 + 6);
-//var spellLevel1DamageEnemy = Math.floor(Math.random() * 6 + 6);
+var spellLevel1Damage = Math.floor(Math.random() * 6 + 6);
+var spellLevel1DamageEnemy = Math.floor(Math.random() * 6 + 6);
 
-//var spellLevel2Damage = Math.floor(Math.random() * 12 + 12);
-//var spellLevel2DamageEnemy = Math.floor(Math.random() * 12 + 12);
+var spellLevel2Damage = Math.floor(Math.random() * 12 + 12);
+var spellLevel2DamageEnemy = Math.floor(Math.random() * 12 + 12);
 
-//var spellLevel3Damage = Math.floor(Math.random() * 18 + 18);
-//var spellLevel3DamageEnemy = Math.floor(Math.random() * 18 + 18);
+var spellLevel3Damage = Math.floor(Math.random() * 18 + 18);
+var spellLevel3DamageEnemy = Math.floor(Math.random() * 18 + 18);
 
 // Set up the mages' attributes
 var hero = new Player(100, 100, spellLevel1Select, spellLevel1Damage, spellLevel2Select, spellLevel2Damage, spellLevel3Select, spellLevel3Damage);
@@ -221,41 +217,41 @@ function burst() {
 	if (enemy.spell3 === "earth3" && hero.spell3 === "fire3") {enemy.spell3Damage = spellLevel3Damage * 2;}
 	
 	// Find Weaknesses
-	if (hero.spell1 === "fire1" && enemy.spell1 === "earth1") {hero.spell1Damage = spellLevel1Damage / 2;}
-	if (hero.spell1 === "wood1" && enemy.spell1 === "fire1") {hero.spell1Damage = spellLevel1Damage / 2;}
-	if (hero.spell1 === "water1" && enemy.spell1 === "wood1") {hero.spell1Damage = spellLevel1Damage / 2;}
-	if (hero.spell1 === "metal1" && enemy.spell1 === "water1") {hero.spell1Damage = spellLevel1Damage / 2;}
-	if (hero.spell1 === "earth1" && enemy.spell1 === "metal1") {hero.spell1Damage = spellLevel1Damage / 2;}
+	if (hero.spell1 === "fire1" && enemy.spell1 === "earth1") {hero.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (hero.spell1 === "wood1" && enemy.spell1 === "fire1") {hero.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (hero.spell1 === "water1" && enemy.spell1 === "wood1") {hero.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (hero.spell1 === "metal1" && enemy.spell1 === "water1") {hero.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (hero.spell1 === "earth1" && enemy.spell1 === "metal1") {hero.spell1Damage = Math.floor(spellLevel1Damage / 2);}
 	
-	if (hero.spell2 === "fire2" && enemy.spell2 === "earth2") {hero.spell2Damage = spellLevel2Damage / 2;}
-	if (hero.spell2 === "wood2" && enemy.spell2 === "fire2") {hero.spell2Damage = spellLevel2Damage / 2;}
-	if (hero.spell2 === "water2" && enemy.spell2 === "wood2") {hero.spell2Damage = spellLevel2Damage / 2;}
-	if (hero.spell2 === "metal2" && enemy.spell2 === "water2") {hero.spell2Damage = spellLevel2Damage / 2;}
-	if (hero.spell2 === "earth2" && enemy.spell2 === "metal2") {hero.spell2Damage = spellLevel2Damage / 2;}
+	if (hero.spell2 === "fire2" && enemy.spell2 === "earth2") {hero.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (hero.spell2 === "wood2" && enemy.spell2 === "fire2") {hero.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (hero.spell2 === "water2" && enemy.spell2 === "wood2") {hero.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (hero.spell2 === "metal2" && enemy.spell2 === "water2") {hero.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (hero.spell2 === "earth2" && enemy.spell2 === "metal2") {hero.spell2Damage = Math.floor(spellLevel2Damage / 2);}
 	
-	if (hero.spell3 === "fire3" && enemy.spell3 === "earth3") {hero.spell3Damage = spellLevel3Damage / 2;}
-	if (hero.spell3 === "wood3" && enemy.spell3 === "fire3") {hero.spell3Damage = spellLevel3Damage / 2;}
-	if (hero.spell3 === "water3" && enemy.spell3 === "wood3") {hero.spell3Damage = spellLevel3Damage / 2;}
-	if (hero.spell3 === "metal3" && enemy.spell3 === "water3") {hero.spell3Damage = spellLevel3Damage / 2;}
-	if (hero.spell3 === "earth3" && enemy.spell3 === "metal3") {hero.spell3Damage = spellLevel3Damage / 2;}
+	if (hero.spell3 === "fire3" && enemy.spell3 === "earth3") {hero.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (hero.spell3 === "wood3" && enemy.spell3 === "fire3") {hero.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (hero.spell3 === "water3" && enemy.spell3 === "wood3") {hero.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (hero.spell3 === "metal3" && enemy.spell3 === "water3") {hero.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (hero.spell3 === "earth3" && enemy.spell3 === "metal3") {hero.spell3Damage = Math.floor(spellLevel3Damage / 2);}
 	
-	if (enemy.spell1 === "fire1" && hero.spell1 === "earth1") {enemy.spell1Damage = spellLevel1Damage / 2;}
-	if (enemy.spell1 === "wood1" && hero.spell1 === "fire1") {enemy.spell1Damage = spellLevel1Damage / 2;}
-	if (enemy.spell1 === "water1" && hero.spell1 === "wood1") {enemy.spell1Damage = spellLevel1Damage / 2;}
-	if (enemy.spell1 === "metal1" && hero.spell1 === "water1") {enemy.spell1Damage = spellLevel1Damage / 2;}
-	if (enemy.spell1 === "earth1" && hero.spell1 === "metal1") {enemy.spell1Damage = spellLevel1Damage / 2;}
+	if (enemy.spell1 === "fire1" && hero.spell1 === "earth1") {enemy.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (enemy.spell1 === "wood1" && hero.spell1 === "fire1") {enemy.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (enemy.spell1 === "water1" && hero.spell1 === "wood1") {enemy.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (enemy.spell1 === "metal1" && hero.spell1 === "water1") {enemy.spell1Damage = Math.floor(spellLevel1Damage / 2);}
+	if (enemy.spell1 === "earth1" && hero.spell1 === "metal1") {enemy.spell1Damage = Math.floor(spellLevel1Damage / 2);}
 	
-	if (enemy.spell2 === "fire2" && hero.spell2 === "earth2") {enemy.spell2Damage = spellLevel2Damage / 2;}
-	if (enemy.spell2 === "wood2" && hero.spell2 === "fire2") {enemy.spell2Damage = spellLevel2Damage / 2;}
-	if (enemy.spell2 === "water2" && hero.spell2 === "wood2") {enemy.spell2Damage = spellLevel2Damage / 2;}
-	if (enemy.spell2 === "metal2" && hero.spell2 === "water2") {enemy.spell2Damage = spellLevel2Damage / 2;}
-	if (enemy.spell2 === "earth2" && hero.spell2 === "metal2") {enemy.spell2Damage = spellLevel2Damage / 2;}
+	if (enemy.spell2 === "fire2" && hero.spell2 === "earth2") {enemy.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (enemy.spell2 === "wood2" && hero.spell2 === "fire2") {enemy.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (enemy.spell2 === "water2" && hero.spell2 === "wood2") {enemy.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (enemy.spell2 === "metal2" && hero.spell2 === "water2") {enemy.spell2Damage = Math.floor(spellLevel2Damage / 2);}
+	if (enemy.spell2 === "earth2" && hero.spell2 === "metal2") {enemy.spell2Damage = Math.floor(spellLevel2Damage / 2);}
 	
-	if (enemy.spell3 === "fire3" && hero.spell3 === "earth3") {enemy.spell3Damage = spellLevel3Damage / 2;}
-	if (enemy.spell3 === "wood3" && hero.spell3 === "fire3") {enemy.spell3Damage = spellLevel3Damage / 2;}
-	if (enemy.spell3 === "water3" && hero.spell3 === "wood3") {enemy.spell3Damage = spellLevel3Damage / 2;}
-	if (enemy.spell3 === "metal3" && hero.spell3 === "water3") {enemy.spell3Damage = spellLevel3Damage / 2;}
-	if (enemy.spell3 === "earth3" && hero.spell3 === "metal3") {enemy.spell3Damage = spellLevel3Damage / 2;}
+	if (enemy.spell3 === "fire3" && hero.spell3 === "earth3") {enemy.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (enemy.spell3 === "wood3" && hero.spell3 === "fire3") {enemy.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (enemy.spell3 === "water3" && hero.spell3 === "wood3") {enemy.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (enemy.spell3 === "metal3" && hero.spell3 === "water3") {enemy.spell3Damage = Math.floor(spellLevel3Damage / 2);}
+	if (enemy.spell3 === "earth3" && hero.spell3 === "metal3") {enemy.spell3Damage = Math.floor(spellLevel3Damage / 2);}
 }
 
 $("#battleDisplay").html("BEGIN!");
@@ -348,30 +344,35 @@ var battle = function() {
 
 // Commit spells and hide spellbook
 $('#commitSpells').click(function() {
-	// Hide spellbook view
-	$('#spellbookWrap').addClass('hide');
-	
-	playerName = $('#inputName').val();
-	if (playerName) {
-		$('#player1Name').html(playerName);
-	} else {
-		$('#player1Name').html("Player 1");	
-	};
-	
-	// Assign spells to player
-	hero.spell1 = spellLevel1Select;
-	hero.spell2 = spellLevel2Select;
-	hero.spell3 = spellLevel3Select;
-	
-	console.log("Player\'s first spell is " + hero.spell1 + ".");
-	console.log("Player\'s second spell is " + hero.spell2 + ".");
-	console.log("Player\'s third spell is " + hero.spell3 + ".");
-	console.log("");
-	console.log("Enemy\'s first spell is " + enemy.spell1 + ".");
-	console.log("Enemy\'s second spell is " + enemy.spell2 + ".");
-	console.log("Enemy\'s third spell is " + enemy.spell3 + ".");
-	
-	burst();
-	battle();
+	// Make sure all three levels have been selected
+	if (!spellLevel1Select || !spellLevel2Select || !spellLevel3Select) {
+		alert("You need to select all three levels of spells!");
+	} else {	
+		// Hide spellbook view
+		$('#spellbookWrap').addClass('hide');
+		
+		playerName = $('#inputName').val();
+		if (playerName) {
+			$('#player1Name').html(playerName);
+		} else {
+			$('#player1Name').html("Player 1");	
+		};
+		
+		// Assign spells to player
+		hero.spell1 = spellLevel1Select;
+		hero.spell2 = spellLevel2Select;
+		hero.spell3 = spellLevel3Select;
+		
+		console.log("Player\'s first spell is " + hero.spell1 + ".");
+		console.log("Player\'s second spell is " + hero.spell2 + ".");
+		console.log("Player\'s third spell is " + hero.spell3 + ".");
+		console.log("");
+		console.log("Enemy\'s first spell is " + enemy.spell1 + ".");
+		console.log("Enemy\'s second spell is " + enemy.spell2 + ".");
+		console.log("Enemy\'s third spell is " + enemy.spell3 + ".");
+		
+		burst();
+		battle();
+	}
 });
 
