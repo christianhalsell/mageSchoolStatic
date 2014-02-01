@@ -264,16 +264,6 @@ var battle = function() {
 	
 	// Change hp bar color depending on percentage
 	var hpBarAlert = function() {
-		// If HP drops to 50% or below
-		if (hero.hp <= (hero.baseHp / 2)) {
-			$('#player1HPBar').css('background','orange');
-			$('#player1HPBarWrap').css('border','1px solid orange');
-		}
-		if (enemy.hp <= (enemy.baseHp / 2)) {
-			$('#player2HPBar').css('background','orange');
-			$('#player2HPBarWrap').css('border','1px solid orange');
-		}
-		
 		// If HP drops to 20% or below
 		if (hero.hp <= (hero.baseHp / 5)) {
 			$('#player1HPBar').css('background','red');
