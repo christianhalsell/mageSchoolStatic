@@ -267,11 +267,9 @@ var battle = function() {
 		// If HP drops to 20% or below
 		if (hero.hp <= (hero.baseHp / 5)) {
 			$('#player1HPBar').css('background','red');
-			$('#player1HPBarWrap').css('border','1px solid red');
 		}
 		if (enemy.hp <= (enemy.baseHp / 5)) {
 			$('#player2HPBar').css('background','red');
-			$('#player2HPBarWrap').css('border','1px solid red');
 		}
 	}
 	
