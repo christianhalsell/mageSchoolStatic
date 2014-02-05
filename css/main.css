@@ -8,6 +8,8 @@ body {
 	color:#000;
 }
 
+xxx#spellbookWrap {display:none}
+
 /* ---- universal properties ---- */
 p, ul, li, h1, h2, h3 {margin:0 0 1em; padding:0}
 
@@ -238,7 +240,7 @@ button#commitSpells {
 	left:0;
 	top:0;
 	z-index:100;
-	background-color:green;
+	background-color:#aaa;
 }
 
 #arena {
@@ -246,78 +248,88 @@ button#commitSpells {
 	margin:20px auto;
 	width:960px;
 	height:500px;
-	background:white;
+	background-color:white;
+	background-repeat:no-repeat;
 }
+
+.bg-training {background-image:url(../images/levelBG-training.jpg)}
 
 #player1Wrap {
 	position:absolute;
-	left:20px;
+	left:50px;
 	top:20px;
 	font-size:10px;
-	padding:20px;
-	background:#222;
+	xxxbackground:#222;
 }
 
 #player2Wrap {
 	position:absolute;
-	right:20px;
+	right:50px;
 	top:20px;
 	font-size:10px;
-	padding:20px;
-	background:#222;
+	xxxbackground:#222;
 }
 
 #player1Name {
-	font-size:12px;
-	margin:0 0 5px;
+	font-size:14px;
+	margin:0 0 2px;
 	text-align:left;
+	font-weight:bold;
+	text-shadow:2px 2px 2px #000;
 	color:#fff;
 }
 
 #player2Name {
-	font-size:12px;
-	margin:0 0 5px;
+	font-size:14px;
+	margin:0 0 2px;
 	text-align:right;
+	font-weight:bold;
+	text-shadow:2px 2px 2px #000;
 	color:#fff;
 }
 
 #player1HPBarWrap,
 #player2HPBarWrap {
-	width:200px;
-	height:20px;
-	border:1px solid blue;
-	background:black;
+	width:202px;
+	height:22px;
+	padding:2px;
+	background:url(../images/energyBarBG.png) no-repeat 0 0;
 }
 
 #player1HPBar {
-	height:20px;
+	height:22px;
 	float:left;
-	background:blue;
+	background:url(../images/energyBarLeft.png) repeat-y left top;
 }
 
 #player2HPBar {
-	height:20px;
+	height:22px;
 	float:right;
-	background:blue;
+	background:url(../images/energyBarRight.png) repeat-y right top;
 }
 
 #battleDisplay {
-	width:918px;
-	height:258px;
+	width:618px;
+	height:146px;
+	padding:26px 40px;
 	position:absolute;
 	font-size:24px;
-	left:20px;
-	top:120px;
-	border:1px solid purple;
-	background:lavender;
+	left:130px;
+	top:94px;
+	font:bold 14px/1.4 Verdana, Geneva, sans-serif;
+	color:#fff;
+	border:1px solid #000;
+	background:url(../images/battleTextBG.png) repeat 0 0;
 }
 
 #spellBar {
-	padding:20px 0 20px 20px;
+	width:342px;
+	height:74px;
+	padding:34px 97px;
 	position:absolute;
-	bottom:20px;
-	margin-left:267px;
-	background:orange;	
+	left:215px;
+	bottom:-106px;
+	background:url(../images/battleBarBG.png) no-repeat 0 0;
 }
 
 button#spellBarLevel1,
@@ -332,3 +344,5 @@ button#spellBarLevel3 {
 	margin-right:20px;
 	background-color:#fff;
 }
+
+button#spellBarLevel3 {margin-right:0}
