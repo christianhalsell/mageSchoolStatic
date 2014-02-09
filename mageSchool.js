@@ -151,18 +151,9 @@ var level1ListRandom = Math.floor(Math.random()* 5);
 var level2ListRandom = Math.floor(Math.random()* 5);
 var level3ListRandom = Math.floor(Math.random()* 5);
 
-var enemySpell1 = level1List[level1ListRandom];
-var enemySpell2 = level2List[level2ListRandom];
-var enemySpell3 = level3List[level3ListRandom];
-
-/*var spellLevel1Damage = 10;
-var spellLevel1DamageEnemy = 10;
-
-var spellLevel2Damage = 20;
-var spellLevel2DamageEnemy = 20;
-
-var spellLevel3Damage = 30;
-var spellLevel3DamageEnemy = 30;*/
+var enemySpell1 = level1List[1];
+var enemySpell2 = level2List[1];
+var enemySpell3 = level3List[1];
 
 // Spell Damage
 var spellLevel1Damage = Math.floor(Math.random() * 6 + 6);
@@ -179,42 +170,44 @@ var hero = new Player(100, 100, spellLevel1Select, spellLevel1Damage, spellLevel
 var enemy = new Player(100, 100, enemySpell1, spellLevel1DamageEnemy, enemySpell2, spellLevel2DamageEnemy, enemySpell3, spellLevel3DamageEnemy);
 
 // Find Strengths
+var burstHero, burstEnemy;
+var supress;
 function burst() {
-	if (hero.spell1 === "fire1" && enemy.spell1 === "wood1") {hero.spell1Damage = spellLevel1Damage * 2;}
-	if (hero.spell1 === "wood1" && enemy.spell1 === "water1") {hero.spell1Damage = spellLevel1Damage * 2;}
-	if (hero.spell1 === "water1" && enemy.spell1 === "metal1") {hero.spell1Damage = spellLevel1Damage * 2;}
-	if (hero.spell1 === "metal1" && enemy.spell1 === "earth1") {hero.spell1Damage = spellLevel1Damage * 2;}
-	if (hero.spell1 === "earth1" && enemy.spell1 === "fire1") {hero.spell1Damage = spellLevel1Damage * 2;}
+	if (hero.spell1 === "fire1" && enemy.spell1 === "wood1") {hero.spell1Damage = spellLevel1Damage * 2; burstHero = true;}
+	if (hero.spell1 === "wood1" && enemy.spell1 === "water1") {hero.spell1Damage = spellLevel1Damage * 2; burstHero = true;}
+	if (hero.spell1 === "water1" && enemy.spell1 === "metal1") {hero.spell1Damage = spellLevel1Damage * 2; burstHero = true;}
+	if (hero.spell1 === "metal1" && enemy.spell1 === "earth1") {hero.spell1Damage = spellLevel1Damage * 2; burstHero = true;}
+	if (hero.spell1 === "earth1" && enemy.spell1 === "fire1") {hero.spell1Damage = spellLevel1Damage * 2; burstHero = true;}
 	
-	if (hero.spell2 === "fire2" && enemy.spell2 === "wood2") {hero.spell2Damage = spellLevel2Damage * 2;}
-	if (hero.spell2 === "wood2" && enemy.spell2 === "water2") {hero.spell2Damage = spellLevel2Damage * 2;}
-	if (hero.spell2 === "water2" && enemy.spell2 === "metal2") {hero.spell2Damage = spellLevel2Damage * 2;}
-	if (hero.spell2 === "metal2" && enemy.spell2 === "earth2") {hero.spell2Damage = spellLevel2Damage * 2;}
-	if (hero.spell2 === "earth2" && enemy.spell2 === "fire2") {hero.spell2Damage = spellLevel2Damage * 2;}
+	if (hero.spell2 === "fire2" && enemy.spell2 === "wood2") {hero.spell2Damage = spellLevel2Damage * 2; burstHero = true;}
+	if (hero.spell2 === "wood2" && enemy.spell2 === "water2") {hero.spell2Damage = spellLevel2Damage * 2; burstHero = true;}
+	if (hero.spell2 === "water2" && enemy.spell2 === "metal2") {hero.spell2Damage = spellLevel2Damage * 2; burstHero = true;}
+	if (hero.spell2 === "metal2" && enemy.spell2 === "earth2") {hero.spell2Damage = spellLevel2Damage * 2; burstHero = true;}
+	if (hero.spell2 === "earth2" && enemy.spell2 === "fire2") {hero.spell2Damage = spellLevel2Damage * 2; burstHero = true;}
 	
-	if (hero.spell3 === "fire3" && enemy.spell3 === "wood3") {hero.spell3Damage = spellLevel3Damage * 2;}
-	if (hero.spell3 === "wood3" && enemy.spell3 === "water3") {hero.spell3Damage = spellLevel3Damage * 2;}
-	if (hero.spell3 === "water3" && enemy.spell3 === "metal3") {hero.spell3Damage = spellLevel3Damage * 2;}
-	if (hero.spell3 === "metal3" && enemy.spell3 === "earth3") {hero.spell3Damage = spellLevel3Damage * 2;}
-	if (hero.spell3 === "earth3" && enemy.spell3 === "fire3") {hero.spell3Damage = spellLevel3Damage * 2;}
+	if (hero.spell3 === "fire3" && enemy.spell3 === "wood3") {hero.spell3Damage = spellLevel3Damage * 2; burstHero = true;}
+	if (hero.spell3 === "wood3" && enemy.spell3 === "water3") {hero.spell3Damage = spellLevel3Damage * 2; burstHero = true;}
+	if (hero.spell3 === "water3" && enemy.spell3 === "metal3") {hero.spell3Damage = spellLevel3Damage * 2; burstHero = true;}
+	if (hero.spell3 === "metal3" && enemy.spell3 === "earth3") {hero.spell3Damage = spellLevel3Damage * 2; burstHero = true;}
+	if (hero.spell3 === "earth3" && enemy.spell3 === "fire3") {hero.spell3Damage = spellLevel3Damage * 2; burstHero = true;}
 	
-	if (enemy.spell1 === "fire1" && hero.spell1 === "wood1") {enemy.spell1Damage = spellLevel1Damage * 2;}
-	if (enemy.spell1 === "wood1" && hero.spell1 === "water1") {enemy.spell1Damage = spellLevel1Damage * 2;}
-	if (enemy.spell1 === "water1" && hero.spell1 === "metal1") {enemy.spell1Damage = spellLevel1Damage * 2;}
-	if (enemy.spell1 === "metal1" && hero.spell1 === "earth1") {enemy.spell1Damage = spellLevel1Damage * 2;}
-	if (enemy.spell1 === "earth1" && hero.spell1 === "fire1") {enemy.spell1Damage = spellLevel1Damage * 2;}
+	if (enemy.spell1 === "fire1" && hero.spell1 === "wood1") {enemy.spell1Damage = spellLevel1Damage * 2; burstEnemy = true;}
+	if (enemy.spell1 === "wood1" && hero.spell1 === "water1") {enemy.spell1Damage = spellLevel1Damage * 2; burstEnemy = true;}
+	if (enemy.spell1 === "water1" && hero.spell1 === "metal1") {enemy.spell1Damage = spellLevel1Damage * 2; burstEnemy = true;}
+	if (enemy.spell1 === "metal1" && hero.spell1 === "earth1") {enemy.spell1Damage = spellLevel1Damage * 2; burstEnemy = true;}
+	if (enemy.spell1 === "earth1" && hero.spell1 === "fire1") {enemy.spell1Damage = spellLevel1Damage * 2; burstEnemy = true;}
 	
-	if (enemy.spell2 === "fire2" && hero.spell2 === "wood2") {enemy.spell2Damage = spellLevel2Damage * 2;}
-	if (enemy.spell2 === "wood2" && hero.spell2 === "water2") {enemy.spell2Damage = spellLevel2Damage * 2;}
-	if (enemy.spell2 === "water2" && hero.spell2 === "metal2") {enemy.spell2Damage = spellLevel2Damage * 2;}
-	if (enemy.spell2 === "metal2" && hero.spell2 === "earth2") {enemy.spell2Damage = spellLevel2Damage * 2;}
-	if (enemy.spell2 === "earth2" && hero.spell2 === "fire2") {enemy.spell2Damage = spellLevel2Damage * 2;}
+	if (enemy.spell2 === "fire2" && hero.spell2 === "wood2") {enemy.spell2Damage = spellLevel2Damage * 2; burstEnemy = true;}
+	if (enemy.spell2 === "wood2" && hero.spell2 === "water2") {enemy.spell2Damage = spellLevel2Damage * 2; burstEnemy = true;}
+	if (enemy.spell2 === "water2" && hero.spell2 === "metal2") {enemy.spell2Damage = spellLevel2Damage * 2; burstEnemy = true;}
+	if (enemy.spell2 === "metal2" && hero.spell2 === "earth2") {enemy.spell2Damage = spellLevel2Damage * 2; burstEnemy = true;}
+	if (enemy.spell2 === "earth2" && hero.spell2 === "fire2") {enemy.spell2Damage = spellLevel2Damage * 2; burstEnemy = true;}
 	
-	if (enemy.spell3 === "fire3" && hero.spell3 === "wood3") {enemy.spell3Damage = spellLevel3Damage * 2;}
-	if (enemy.spell3 === "wood3" && hero.spell3 === "water3") {enemy.spell3Damage = spellLevel3Damage * 2;}
-	if (enemy.spell3 === "water3" && hero.spell3 === "metal3") {enemy.spell3Damage = spellLevel3Damage * 2;}
-	if (enemy.spell3 === "metal3" && hero.spell3 === "earth3") {enemy.spell3Damage = spellLevel3Damage * 2;}
-	if (enemy.spell3 === "earth3" && hero.spell3 === "fire3") {enemy.spell3Damage = spellLevel3Damage * 2;}
+	if (enemy.spell3 === "fire3" && hero.spell3 === "wood3") {enemy.spell3Damage = spellLevel3Damage * 2; burstEnemy = true;}
+	if (enemy.spell3 === "wood3" && hero.spell3 === "water3") {enemy.spell3Damage = spellLevel3Damage * 2; burstEnemy = true;}
+	if (enemy.spell3 === "water3" && hero.spell3 === "metal3") {enemy.spell3Damage = spellLevel3Damage * 2; burstEnemy = true;}
+	if (enemy.spell3 === "metal3" && hero.spell3 === "earth3") {enemy.spell3Damage = spellLevel3Damage * 2; burstEnemy = true;}
+	if (enemy.spell3 === "earth3" && hero.spell3 === "fire3") {enemy.spell3Damage = spellLevel3Damage * 2; burstEnemy = true;}
 	
 	// Find Weaknesses
 	if (hero.spell1 === "fire1" && enemy.spell1 === "earth1") {hero.spell1Damage = Math.floor(spellLevel1Damage / 2);}
@@ -254,7 +247,6 @@ function burst() {
 	if (enemy.spell3 === "earth3" && hero.spell3 === "metal3") {enemy.spell3Damage = Math.floor(spellLevel3Damage / 2);}
 }
 
-$("#battleDisplay").html("BEGIN!");
 
 // Let's rumble
 var battle = function() {
@@ -285,29 +277,66 @@ var battle = function() {
 			alert("You lose.");
 		}
 	};
+	
+	// Check to see if spell bursted or got supressed
+	var textBurstHero = '';
+	var textBurstEnemy = '';
+	
+	function burstCheck() {
+		if (burstHero == true){
+			textBurstHero = ' <span class="textBurst">Burst!</span>';
+		}
+		
+		if(burstEnemy == true) {
+			textBurstEnemy = ' <span class="textBurst">Burst!</span>';
+		}
+	}
 
 	// Level 1 Spells
 	$('#spellBarLevel1').click(function() {
-		enemy.hp = enemy.hp - hero.spell1Damage;
-		var percentWidth = ((enemy.hp / enemy.baseHp) * 100) + "%";
-		$('#player2HPBar').css('width', percentWidth);
-		$('#spellBarLevel1').addClass('selected');
-		$('#battleDisplay').html("You attack with " + hero.spell1 + " for " + hero.spell1Damage + " damage.<br>");
-		hpBarAlert();
-		playerWin();
-
-		if (enemy.hp > 0) {
-		setTimeout(function() {
-				hero.hp = hero.hp - enemy.spell1Damage;
-				var percentWidth = ((hero.hp / hero.baseHp) * 100) + "%";
-				$('#player1HPBar').css('width', percentWidth);
-				$('#spellBarLevel1').removeClass('selected');
-				$('#battleDisplay').append("Enemy attacks with " + enemy.spell1 + " for " + enemy.spell1Damage + " damage.<br>");
-				hpBarAlert();
-				enemyWin();
-			}, 1000);
+		$('#spellBarLevel1').addClass('selected');	
+		
+		function heroAttack() {
+			enemy.hp = enemy.hp - hero.spell1Damage;
+			var percentWidth = ((enemy.hp / enemy.baseHp) * 100) + "%";
+			$('#player2HPBar').css('width', percentWidth);		
+			burstCheck();
+			supressCheck();			
+			$('#battleDisplay').append("You attack with " + hero.spell1 + " for " + hero.spell1Damage + " damage." + textBurstHero + textSupress + "<br>");
+			hpBarAlert();
+			playerWin();
 		}
 
+		function enemyAttack() {
+			hero.hp = hero.hp - enemy.spell1Damage;
+			var percentWidth = ((hero.hp / hero.baseHp) * 100) + "%";
+			$('#player1HPBar').css('width', percentWidth);		
+			burstCheck();
+			supressCheck();			
+			$('#battleDisplay').append("Enemy attacks with " + enemy.spell1 + " for " + enemy.spell1Damage + " damage." + textBurstEnemy + textSupress + "<br>");
+			hpBarAlert();
+			enemyWin();
+		}
+		
+		// Find out who goes first
+		var heroInitiative = Math.floor(Math.random()* 10);
+		var enemyInitiative = Math.floor(Math.random()* 10);
+		
+		if (heroInitiative >= enemyInitiative) {
+			heroAttack();
+			setTimeout(function() {
+				enemyAttack();
+				$('#battleDisplay').append("<br>");
+				$('#spellBarLevel1').removeClass('selected');
+			}, 1000);
+		} else {
+			enemyAttack();
+			setTimeout(function() {
+				heroAttack();
+				$('#battleDisplay').append("<br>");
+				$('#spellBarLevel1').removeClass('selected');
+			}, 1000);
+		}
 	});
 
 	// Level 2 Spells
@@ -364,7 +393,7 @@ var battle = function() {
 $('#commitSpells').click(function() {
 	// Make sure all three levels have been selected
 	if (!spellLevel1Select || !spellLevel2Select || !spellLevel3Select) {
-		alert("You need to select all three levels of spells!");
+		alert("You need to select three levels of spells!");
 	} else {	
 		// Hide spellbook view
 		$('#spellbookWrap').addClass('hide');

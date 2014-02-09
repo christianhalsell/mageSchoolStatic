@@ -52,16 +52,23 @@ h3 {font-size:1.2em}
 	top:0;
 	left:0;
 	z-index:1000;
-	background-color:blue;
+	background:#000 url(../images/spellbookWrapBG.jpg) repeat-x 0 0;
+}
+
+#spellbookOuter {
+	width:100%;
+	height:100%;
+	position:absolute;
+	margin:0 auto;
+	background:url(../images/spellbookOuterBG.png) no-repeat top center;
 }
 
 #spellbook {
 	position:relative;
-	margin:20px auto;
+	margin:40px auto;
 	width:920px;
 	height:550px;
 	padding:20px;
-	background:white;
 }
 
 #logIn {margin-bottom:20px}
@@ -70,7 +77,7 @@ label {font-family: 'Eagle Lake', cursive; font-size:24px;}
 
 .labelWrap {margin-right:20px; margin-left:50px; float:left;}
 
-#spellColWrap {padding:0 50px; background-color:orange;}
+#spellColWrap {padding:0 50px;}
 
 .spellCol {
 	margin-right:20px;
@@ -202,6 +209,7 @@ button.earth3 {background:url(../images/iconEarth3.jpg) no-repeat 0 0}
 	bottom:20px;
 	margin-left:267px;
 	background:yellow;
+	display:none;
 }
 
 span#spellSelected1,
@@ -259,7 +267,6 @@ button#commitSpells {
 	left:50px;
 	top:20px;
 	font-size:10px;
-	xxxbackground:#222;
 }
 
 #player2Wrap {
@@ -267,7 +274,6 @@ button#commitSpells {
 	right:50px;
 	top:20px;
 	font-size:10px;
-	xxxbackground:#222;
 }
 
 #player1Name {
@@ -316,6 +322,7 @@ button#commitSpells {
 	font-size:24px;
 	left:130px;
 	top:94px;
+	overflow-y:scroll;
 	font:bold 14px/1.4 Verdana, Geneva, sans-serif;
 	color:#fff;
 	border:1px solid #000;
@@ -343,6 +350,11 @@ button#spellBarLevel3 {
 	cursor:pointer;
 	margin-right:20px;
 	background-color:#fff;
+	background-position:0 0;
 }
+
+button#spellBarLevel1.selected,
+button#spellBarLevel2.selected,
+button#spellBarLevel3.selected {background-position:0 -64px}
 
 button#spellBarLevel3 {margin-right:0}
